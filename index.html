@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grow a Garden - Plant Value Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0fff0;
+        }
+        h1 {
+            color: #2e8b57;
+        }
+        label, select, input {
+            margin-top: 10px;
+            display: block;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #006400;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌼 Grow a Garden - Plant Value Calculator 🌼</h1>
+    <label for="plant">Choose a plant:</label>
+    <select id="plant">
+        <option value="Rose">Rose</option>
+        <option value="Sunflower">Sunflower</option>
+        <option value="Tulip">Tulip</option>
+        <option value="Daisy">Daisy</option>
+        <option value="Lily">Lily</option>
+    </select>
+
+    <label for="growth">Growth Value (e.g. 4.2):</label>
+    <input type="number" id="growth" step="0.01">
+
+    <label for="mutations">Number of Mutations:</label>
+    <input type="number" id="mutations">
+
+    <button onclick="calculate()">Calculate Total Value</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        const baseValues = {
+            Rose: 1000,
+            Sunflower: 1500,
+            Tulip: 1200,
+            Daisy: 800,
+            Lily: 2000
+        };
+
+        function calculate() {
+            const plant = document.getElementById("plant").value;
+            const growth = parseFloat(document.getElementById("growth").value);
+            const mutations = parseInt(document.getElementById("mutations").value);
+            const base = baseValues[plant] || 0;
+
+            if (!growth || isNaN(mutations)) {
+                document.getElementById("result").innerText = "Please enter valid growth and mutation values.";
+                return;
+            }
+
+            const total = base * growth * (1 + (0.15 * mutations));
+            document.getElementById("result").innerText = `Total Value: ${total.toLocaleString()} 💰`;
+        }
+    </script>
+</body>
+</html>
