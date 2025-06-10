@@ -1,126 +1,147 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>حاسبة Grow a Garden | Grow a Garden Calculator</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            background-color: #f0f4f8;
-            margin: 0;
-            padding: 30px;
-        }
-        .container {
-            max-width: 700px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #2b6cb0;
-        }
-        label {
-            display: block;
-            margin-top: 20px;
-            color: #2d3748;
-        }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            font-size: 16px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-        }
-        button {
-            width: 100%;
-            padding: 12px;
-            margin-top: 20px;
-            background-color: #3182ce;
-            color: white;
-            font-size: 16px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #2c5282;
-        }
-        #result {
-            margin-top: 25px;
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-            color: #2d3748;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>حاسبة Grow a Garden | Calculator</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f8f4; padding: 20px; }
+    .container { max-width: 700px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+    h1 { text-align: center; margin-bottom: 20px; }
+    label { display: block; margin: 15px 0 5px; }
+    select, input { width: 100%; padding: 10px; font-size: 16px; border-radius: 6px; border: 1px solid #ccc; }
+    button { width: 100%; padding: 12px; margin-top: 20px; background: #3182ce; color: white; font-size: 16px; border: none; border-radius: 6px; cursor: pointer; }
+    button:hover { background: #2c5282; }
+    #result { margin-top: 25px; font-size: 18px; font-weight: bold; text-align: center; color: #2d3748; }
+  </style>
 </head>
 <body>
-<div class="container">
-    <h1>حاسبة Grow a Garden | Grow a Garden Calculator</h1>
+  <div class="container">
+    <h1>حاسبة Grow a Garden 🌿 / Grow a Garden Calculator</h1>
 
     <label for="plant">النبتة / Plant</label>
     <select id="plant">
-        <option value="Rose">وردة / Rose</option>
-        <option value="Sunflower">دوار الشمس / Sunflower</option>
-        <option value="Tulip">توليب / Tulip</option>
-        <option value="Lily">زنبق / Lily</option>
-        <option value="Orchid">أوركيد / Orchid</option>
-        <option value="Blue Rose">وردة زرقاء / Blue Rose</option>
-        <option value="Venus Flytrap">فينوس آكلة الحشرات / Venus Flytrap</option>
+      <!-- كافة النباتات المستخرجة من الموقع الرسمي -->
+      <option value="carrot">جزر / Carrot</option>
+      <option value="strawberry">فراولة / Strawberry</option>
+      <option value="blueberry">توت أزرق / Blueberry</option>
+      <option value="orangetulip">توليب برتقالي / Orange Tulip</option>
+      <option value="tomato">طماطم / Tomato</option>
+      <option value="corn">ذرة / Corn</option>
+      <option value="daffodil">نرجس / Daffodil</option>
+      <option value="watermelon">بطيخ / Watermelon</option>
+      <option value="pumpkin">قرع / Pumpkin</option>
+      <option value="apple">تفاح / Apple</option>
+      <option value="bamboo">خيزران / Bamboo</option>
+      <option value="coconut">جوز الهند / Coconut</option>
+      <option value="cactus">صبار / Cactus</option>
+      <option value="dragonfruit">فاكهة التنين / Dragon Fruit</option>
+      <option value="mango">مانجو / Mango</option>
+      <option value="grape">عنب / Grape</option>
+      <option value="mushroom">فطر / Mushroom</option>
+      <option value="pepper">فلفل / Pepper</option>
+      <option value="cacao">كاكاو / Cacao</option>
+      <option value="beanstalk">لوفخباز / Beanstalk</option>
+      <option value="emberlily">أمبر ليلي / Ember Lily</option>
+      <option value="papaya">بابايا / Papaya</option>
+      <option value="banana">موز / Banana</option>
+      <option value="passionfruit">فواكه العاطفة / Passionfruit</option>
+      <option value="soulfruit">فواكه الروح / Soulfruit</option>
+      <option value="raspberry">توت العليق / Raspberry</option>
+      <option value="pear">كمثرى / Pear</option>
+      <option value="peach">خوخ / Peach</option>
+      <option value="pineapple">أناناس / Pineapple</option>
+      <option value="chocolatecarrot">جزر شوكولاتة / Chocolate Carrot</option>
+      <option value="redlolipop">مصاصة حمراء / Red Lollipop</option>
+      <option value="candysunflower">دوار الشمس المحلّى / Candy Sunflower</option>
+      <option value="candyblossom">زهرة الحلوى / Candy Blossom</option>
+      <option value="easteregg">بيضة عيد الفصح / Easter Egg</option>
+      <option value="cranberry">توت بري / Cranberry</option>
+      <option value="durian">دوريان / Durian</option>
+      <option value="eggplant">باذنجان / Eggplant</option>
+      <option value="lotus">لوتس / Lotus</option>
+      <option value="venusflytrap">مصيدة فينوس / Venus Flytrap</option>
+      <option value="nightshade">ظل الليل / Nightshade</option>
+      <option value="mint">نعناع / Mint</option>
+      <option value="glowshroom">فطر متوهّج / Glowshroom</option>
+      <option value="moonnmelon">بطيخ القمر / Moonmelon</option>
+      <option value="starfruit">فاكهة النجمة / Starfruit</option>
+      <option value="moonflower">زهرة القمر / Moonflower</option>
+      <option value="bloodbanana">موز الدم / Blood Banana</option>
+      <option value="moonglow">توهّج القمر / Moonglow</option>
+      <option value="moonblossom">زهر القمر / Moonblossom</option>
+      <option value="celestiberry">توت السماء / Celestiberry</option>
+      <option value="hive">خلية / Hive</option>
+      <option value="nectarine">نكتارين / Nectarine</option>
+      <option value="nectarshade">ظل الرحيق / Nectarshade</option>
+      <option value="lavender">خزامى / Lavender</option>
+      <option value="manuka">مانوكا / Manuka</option>
+      <option value="dandelion">طقمية / Dandelion</option>
+      <option value="honeysuckle">عطر العسل / Honeysuckle</option>
     </select>
 
     <label for="weight">الوزن (كيلو) / Weight (kg)</label>
-    <input type="number" id="weight" step="0.01" placeholder="أدخل الوزن / Enter weight">
+    <input type="number" id="weight" step="0.01" placeholder="مثل 4.20">
 
-    <label for="mutations">عدد التطويرات / Number of Mutations</label>
-    <input type="number" id="mutations" value="0" min="0">
+    <label for="growth">النمو (Growth Multiplier)</label>
+    <select id="growth">
+      <option value="1">عادي / Normal ×1</option>
+      <option value="25">ذهبي / Golden ×25</option>
+      <option value="50">قوس قزح / Rainbow ×50</option>
+    </select
 
-    <label for="event">هل حدث العسل مفعل؟ / Is Honey Event Active?</label>
-    <select id="event">
-        <option value="no">لا / No</option>
-        <option value="yes">نعم / Yes</option>
-    </select>
+    >
+
+    <fieldset>
+      <legend>طفرات البيئة / Environmental Mutations</legend>
+      <label><input type="checkbox" class="mutation" value="1"> Wet</label>
+      <label><input type="checkbox" class="mutation" value="1"> Chilled</label>
+      <label><input type="checkbox" class="mutation" value="9"> Frozen</label>
+      <label><input type="checkbox" class="mutation" value="2"> Pollinated</label>
+      <label><input type="checkbox" class="mutation" value="5"> Honey Glazed</label>
+      <label><input type="checkbox" class="mutation" value="99"> Shocked</label>
+      <label><input type="checkbox" class="mutation" value="119"> Celestial</label>
+      <label><input type="checkbox" class="mutation" value="124"> Disco</label>
+      <label><input type="checkbox" class="mutation" value="135"> VoidTouched</label>
+      <label><input type="checkbox" class="mutation" value="24"> Zombified</label>
+      <label><input type="checkbox" class="mutation" value="3"> Bloodlit</label>
+      <label><input type="checkbox" class="mutation" value="4"> Plasma</label>
+    </fieldset>
 
     <button onclick="calculate()">احسب / Calculate</button>
-
-    <div id="result"></div>
-</div>
+    <div id="result">💰 النتيجة تظهر هنا / Result shows here</div>
+  </div>
 
 <script>
-    const plantData = {
-        "Rose": { base: 50, growth: 1.1 },
-        "Sunflower": { base: 80, growth: 1.2 },
-        "Tulip": { base: 65, growth: 1.15 },
-        "Lily": { base: 90, growth: 1.3 },
-        "Orchid": { base: 150, growth: 1.5 },
-        "Blue Rose": { base: 300, growth: 2.0 },
-        "Venus Flytrap": { base: 500, growth: 2.5 }
-    };
+function calculate() {
+  const sel = document.getElementById('plant');
+  const baseData = {
+    carrot: 250, strawberry: 800, blueberry: 500, orangetulip: 1200, tomato: 700,
+    corn: 900, daffodil: 1500, watermelon: 3000, pumpkin: 3500, apple: 1200,
+    bamboo: 3000, coconut: 1000, cactus: 2800, dragonfruit: 4000, mango: 5000,
+    grape: 4500, mushroom: 140000, pepper: 7500, cacao: 10000, beanstalk: 2000,
+    emberlily: 12000, papaya: 4500, banana: 3200, passionfruit: 6000, soulfruit: 7000,
+    raspberry: 3000, pear: 2500, peach: 2700, pineapple: 3500, chocolatecarrot: 1800,
+    redlolipop: 1600, candysunflower: 2000, candyblossom: 2200,
+    easteregg: 5000, cranberry: 3000, durian: 8000, eggplant: 2800, lotus: 4500,
+    venusflytrap: 12000, nightshade: 25000, mint: 1800, glowshroom: 20000,
+    moonmelon: 50000, starfruit: 15000, moonflower: 12000, bloodbanana: 30000,
+    moonglow: 22000, moonblossom: 25000, celestiberry: 28000, hive: 1000,
+    nectarine: 3300, nectarshade: 4000, lavender: 5000, manuka: 6000,
+    dandelion: 1800, honeysuckle: 7000
+  };
 
-    function calculate() {
-        const plant = document.getElementById('plant').value;
-        const weight = parseFloat(document.getElementById('weight').value);
-        const mutations = parseInt(document.getElementById('mutations').value) || 0;
-        const eventActive = document.getElementById('event').value === "yes";
+  const plant = sel.value;
+  const base = baseData[plant] || 0;
+  const weight = parseFloat(document.getElementById('weight').value) || 0;
+  const growth = parseFloat(document.getElementById('growth').value) || 1;
 
-        if (!plantData[plant] || isNaN(weight)) {
-            document.getElementById('result').innerText = "يرجى إدخال البيانات بشكل صحيح / Please enter valid inputs.";
-            return;
-        }
+  let mutationSum = 0;
+  document.querySelectorAll('.mutation:checked').forEach(m => mutationSum += parseFloat(m.value));
 
-        const baseValue = plantData[plant].base;
-        const growthValue = plantData[plant].growth;
-        const mutationMultiplier = 1 + 0.1 * mutations;
-        const eventMultiplier = eventActive ? 1.5 : 1;
-
-        const total = baseValue * weight * growthValue * mutationMultiplier * eventMultiplier;
-
-        document.getElementById('result').innerText = `القيمة الكلية: ${total.toFixed(2)} 💰 / Total Value: ${total.toFixed(2)}`;
-    }
+  const total = base * weight * growth * (1 + mutationSum);
+  document.getElementById('result').innerText = 
+    `💰 القيمة الكلية = ${ Math.round(total).toLocaleString() } 🪙 / Total Value = ${ Math.round(total).toLocaleString() } coins`;
+}
 </script>
 </body>
 </html>
